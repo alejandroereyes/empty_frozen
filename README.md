@@ -1,8 +1,6 @@
 # EmptyFrozen
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/empty_frozen`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Need to return something other than `nil`? We've all needed to from time to time 😅 . Sometimes no mutation will be done to this returning value and sometimes there will; `empty_frozen`'s got you covered either way.
 
 ## Installation
 
@@ -22,7 +20,26 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+require 'empty_frozen'
+
+...
+
+def space_instagram
+  return Hash.empty if cadet?
+
+  visited.celestial.each_with_object({}) do |celestial, hsh|
+    hsh[celestial] = selfies_taken_at celestial
+  end
+end
+
+def potential_pet_recommendations
+  return Array.empty_frozen if has_no_heart?
+
+  liked.animals.map(&:species).uniq
+end
+
+```
 
 ## Development
 
